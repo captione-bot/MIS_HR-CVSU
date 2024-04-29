@@ -1,5 +1,22 @@
 {% extends 'index.html' %}
 {% block content %}
-<h1>Hello world!<h1>
-    {{user.username}}
+{% load static %}
+
+
+<style>
+    body {
+    background-image: linear-gradient(to right, rgba(0, 0, 255, 0.85), rgba(255, 192, 0, 0.90)),
+    url({% static 'images/bacoor.jpg' %});
+
+  background-repeat: no-repeat;
+  background-size: 1500px 820px;
+  }
+</style>
+
+<div class="container-fluid" >
+    <div class="card" style="opacity: .96; background-color: green; color: white">
+ <h1 class="text-center">Welcome {{user.username}} <h1>
+</div>
+    </div>
+
 {% endblock content %}

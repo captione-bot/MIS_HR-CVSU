@@ -13,8 +13,9 @@
 </head>
 
 <body>
-    <nav class="navbar navbar-expand-md navbar-dark bg-dark mb-4">
-        <a class="navbar-brand" href="{% url 'home' %}">Newspaper</a>
+    <nav class="navbar sticky-top navbar-expand-md navbar-dark  mb-4" style="background-color:green;">
+        <image alt="logo" width="60" height="60" class="d-inline-block align-text-top" src="{% static '/images/cvsu.png' %}"></image>
+        <a class="navbar-brand" href="{% url 'home' %}">Human Resources</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
@@ -39,7 +40,7 @@
           
           {% else %}
           <form class="form-inline ml-auto">
-            <a href="{% url 'login' %}" class="btn btn-outline-secondary">Log In</a>
+            <a href="{% url 'login' %}" class="btn btn-outline-light">Log In</a>
             <a href="{% url 'signup' %}" class="btn btn-primary ml-2">Sign up</a>
           </form>
           

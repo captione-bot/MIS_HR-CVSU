@@ -1,8 +1,8 @@
 {% extends 'index.html' %}
 {% block content %}
+{% load static %}
 <form method="post">
     {% csrf_token %}
-    <h2 class="text-center mb-4">Log In</h2>
     <section class="h-100" style="background-color: #006400;">
         <div class="container py-5 h-100">
             <div class="row d-flex justify-content-center align-items-center h-100">
@@ -12,15 +12,14 @@
                             <div class="col-lg-6 d-flex align-items-center"
                                 style="background-color: #228B22; border-top-left-radius: 16px; border-bottom-left-radius: 16px;">
                                 <div class="px-3 py-4 p-md-3 mx-md-4">
-                                    <img src="" class="img-fluid"
-                                        alt="Image Placeholder">
+                                    <img  src="{% static 'images/cvsu statue.png' %}" class="img-fluid"> </img>
                                 </div>
                             </div>
                             <div class="col-lg-6">
                                 <div class="card-body p-md-5 mx-md-4">
                                     <div class="text-center">
-                                        <img src="" style="width: 185px;"
-                                            alt="Logo">
+                                        <img src="{% static 'images/cvsu.png' %}"
+                                             style="width: 185px;" alt="logo">
                                         <h4 class="mt-1 mb-5 pb-1">Human Resources</h4>
                                     </div>
                                     <div class="form-outline mb-4">
