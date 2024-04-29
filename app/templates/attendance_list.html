@@ -1,0 +1,30 @@
+{% block content %}
+{% endblock content %}
+<table class="table table-bordered text-center" style="border: 1px solid;">
+    <thead >
+      <tr class="table-info text-center" style="border: 1px solid;">
+          <th rowspan="2"  >Days</th>
+        <th colspan="2">A.M.</th>
+        <th colspan="2">P.M.</th>
+          <th colspan="2">Undertime</th>
+      </tr>
+    <tr class="table-info" style="border: 1px solid;">
+  
+        <th scope="col">ARRIVAL</th>
+        <th scope="col">DEPARTURE</th>
+          <th scope="col">ARRIVAL</th>
+        <th scope="col">DEPARTURE</th>
+          <th scope="col">Hours</th>
+        <th scope="col">Minutes</th>
+    </tr>
+    </thead>
+    <tbody>
+        {% for attendance in object_list %}
+            <tr>
+                <td>{{ attendance.time_in|date:"F d, Y" }}</td>
+                <td>{{ attendance.time_in|time:"h:i A" }}</td>
+                <td>{{ attendance.time_out|default:"N/A" }}</td>
+            </tr>
+            {% endfor %}
+    </tbody>
+  </table>
