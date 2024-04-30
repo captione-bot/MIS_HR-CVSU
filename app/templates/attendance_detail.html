@@ -1,7 +1,151 @@
 {% extends 'index.html' %}
 {% block content %}
-<h2>{{ object.title }}</h2>
+{% load static %}
 
-    <p>{{ object.username}} | {{ object.email}}</p>
+<link rel="stylesheet" href="{% static 'css/myprofile.css' %}">
+<link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+
+<div class="container">
+    <div class="row">
+		<div class="col-12">
+			<!-- Page title -->
+			<div class="my-5">
+				<h3>Account Information</h3>
+				<hr>
+			</div>
+			<!-- Form START -->
+            <!-- Upload profile -->
+			<form class="file-upload">
+				<div class="row mb-5 gx-5">
+                    <div class="col-xxl-4">
+						<div class="bg-secondary-soft px-4 py-5 rounded">
+							<div class="row g-3">
+								<div class="text-center">
+									<!-- Image upload -->
+									<div class="square position-relative display-2 mb-3">
+										<i class="fas fa-fw fa-user position-absolute top-50 start-50 translate-middle text-secondary"></i>
+									</div>
+									<!-- Button -->
+									<input type="file" id="customFile" name="file" hidden="">
+									<label class="btn btn-success-soft btn-block" for="customFile">Upload</label>
+									<button type="button" class="btn btn-danger-soft">Remove</button>
+									<!-- Content -->
+									<p class="text-muted mt-3 mb-0"><span class="me-1">Note:</span>Minimum size 300px x 300px</p>
+								</div>
+							</div>
+						</div>
+					</div>
+					<!-- Contact detail -->
+					<div class="col-xxl-8 mb-5 mb-xxl-0">
+						<div class="bg-secondary-soft px-4 py-5 rounded">
+							<div class="row g-3">
+								<h4 class="mb-4 mt-0"> Information</h4>
+								<div class="accordion" id="accordionExample">
+                                    <div class="accordion-item">
+                                        <h2 class="accordion-header">
+                                            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                                Basic Information
+                                            </button>
+                                        </h2>
+                                        <div id="collapseOne" class="accordion-collapse collapse show" data-bs-parent="#accordionExample">
+                                            <div class="accordion-body">
+                                                <div class="form-group">
+                                                    <div class="row">
+                                                        <div class="col">
+                                                            <label >First Name:</label>
+                                                             <p>{{ object.first_name}}</p>
+                                                        </div>
+                                                        <div class="col">
+                                                            <label>Middle Name:</label>
+                                                        </div>
+                                                        <div class="col">
+                                                            <label>Last Name:</label>
+                                                            <p>{{ object.last_name}}</p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <br>
+                                                <div class="form-group">
+                                                    <div class="row">
+                                                        <div class="col">
+                                                            <label> Age:</label>
+                                                            <p>{{ object.age}}</p>
+                                                        </div>
+                                                        <div class="col">
+                                                            <label> Email:</label>
+                                                            <p>{{ object.email}}</p>
+                                                        </div>
+                                                        <div class="col">
+                                                            <label for="empId"> Employee ID</label>
+                                                            <input type="number" id="empId" value="2022191" readonly>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="accordion-item">
+                                        <h2 class="accordion-header">
+                                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                                Contact Details
+                                            </button>
+                                        </h2>
+                                        <div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+                                            <div class="accordion-body">
+                                                <div class="form-group">
+                                                    <div class="row">
+                                                        <div class="col">
+                                                            <label for="primaryNo">Primary Contact No.</label>
+                                                            <input type="number" id="primaryNo" value="09095135678" readonly>
+                                                        </div>
+                                                        <div class="col">
+                                                            <label for="emergencyNo">Emergency Contact No.</label>
+                                                            <input type="text" id="emergencyNo" value="09095136789" readonly>
+                                                        </div>
+                                                        <div class="col">
+                                                            <label for="contactName">Contact's Name</label>
+                                                            <input type="text" id="contactName" value="John Wick" readonly>
+                                                        </div>
+                                                    </div>
+                                                    <br>
+                                                    <div class="form-group">
+                                                        <div class="row">
+                                                            <div class="col">
+                                                                <label for="relation">Relationship:</label>
+                                                                <input type="text" id="relation" value="Brother" readonly>
+                                                            </div>
+                                                            <div class="col">
+                                                                <label for="address">Address:</label>
+                                                                <input type="text" id="address" value="Oklahoma" readonly>
+                                                            </div>
+                                                            <div class="col">
+                                                                <label for="status">Status:</label>
+                                                                <input type="text" id="status" value="Regular" readonly>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div> <!-- Row END -->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+				</div>
+			</form>
+        </div>
+    </div>
+</div>
+
+
+
+<!--
+<h2>{{ object.title }}</h2>
+    <p>{{ object.first_name}}{{ object.last_name}} | {{ object.email}}</p>
     <p>{{ object.age}}</p>
+    -->
+
+<script src="{% static 'js/bootstrap.bundle.min.js' %}"></script>
+
 {% endblock content %}
