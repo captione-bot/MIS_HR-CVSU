@@ -2,12 +2,14 @@
 {% block content %}
 {% load static %}
 
+<link rel="stylesheet" href="{% static 'css/req.css' %}">
+
 <h1 class="text-center"> Dashboard </h1>
 <div class="container" style="padding: 50px">
     <div class="row">
         <div class="col-md-4">
             <div class="card text-center" style="border: 5px solid green; ">
-                <a href="/attendance">
+                <a href="/attendance" class="btn btn-success">
                 <div class="card-header text-center" style="height: 70px">
                   <img alt="logo" width="60" height="50"   src="{% static '/images/timelogo.png' %}" > </img>
                 </div>
@@ -19,11 +21,11 @@
         </div>
         <div class="col-md-4">
             <div class="card text-center" style="border: 5px solid green;">
-                <a href="#">
-                <div class="card-header text-center" style="height: 70px" >
-                  <img alt="logo" width="60" height="50"   src="{% static '/images/req.png' %}" > </img>
-                </div>
-                    </a>
+                <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+                    <div class="card-header text-center"  style="height: 70px" >
+                        <img alt="logo" width="60" height="50"   src="{% static '/images/req.png' %}" > </img>
+                    </div>
+                </button>
                 <div class="card-body" style="height: 320px;">
                     <h3> Requirements</h3>
                 </div>
@@ -31,9 +33,11 @@
         </div>
         <div class="col-md-4">
             <div class="card text-center" style="border: 5px solid green;">
+                <a href="/payslip" class="btn btn-success">
                 <div class="card-header text-center"  style="height: 70px">
                   <img alt="logo" width="60" height="50"   src="{% static '/images/payslip.png' %}" > </img>
                 </div>
+                </a>
                 <div class="card-body" style="height: 320px;">
                     <h3> Payslip</h3>
                 </div>
@@ -41,5 +45,44 @@
         </div>
     </div>
 </div>
+
+<!-- Modal -->
+<div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="staticBackdropLabel">Requirements</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+          <!--modalBody-->
+          <div class="form-group">
+              <label for="resume"> Resume</label>
+              <input type="file" id="resume" class="form-control">
+              <br>
+              <label for="diploma">Diploma</label>
+              <input type="file" id="diploma" class="form-control">
+              <br>
+              <label for="tor">TOR</label>
+              <input type="file" id="tor" class="form-control">
+              <br>
+              <label for="med">Medical Certificate</label>
+              <input type="file" id="med" class="form-control">
+              <br>
+              <label for="nbi">NBI Clearance</label>
+              <input type="file" id="nbi" class="form-control">
+          </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+        <button type="button" class="btn btn-primary">Submit</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<script src="{% static 'js/bootstrap.bundle.min.js' %}"></script>
+
 
 {% endblock content %}
