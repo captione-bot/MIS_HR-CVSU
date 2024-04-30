@@ -1,15 +1,17 @@
 body{
     background-color: #FFFDD0;
     }
+
 .card{
     border-radius: 20px;
     background-color: green;
     color: white;
     }
-    .btn{
+.btn{
     border-radius: 15px;
-    }
-    .profile-pic {
+}
+
+.profile-pic {
     width: 200px;
     max-height: 200px;
     display: inline-block;
