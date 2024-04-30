@@ -8,6 +8,12 @@ from .models import Attendance, CustomUser
 class HomePageView(TemplateView):
     template_name = 'home.html'
 
+class PaySlipView(TemplateView):
+    template_name = 'payslip.html'
+
+class DashboardView(TemplateView):
+    template_name = 'dashboard.html'
+
 class SignUpView(CreateView):
    form_class = CustomUserCreationForm
    success_url = reverse_lazy('login')
@@ -34,4 +40,6 @@ class AttendanceCreateView(LoginRequiredMixin, CreateView):
   fields = ('person','time_in', 'time_out')
   login_url = 'login' 
   #redirect nalang kulang tsaka auto().now
+
+
   

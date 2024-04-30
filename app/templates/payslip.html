@@ -1,0 +1,105 @@
+{% extends 'index.html' %}
+{% block content %}
+{% load static %}
+
+<div id="printableArea">
+    <div class="container">
+        <div class="card">
+            <div class="card-header">
+                <h1 class="text-center">Cavite State University <br> Bacoor Campus</h1>
+                <h5 class="text-center">Payslip</h5>
+            </div>
+            <div class="card-body">
+                <div class="form-group">
+                    <div class="row">
+                        <div class="col">
+                            <label for="emp"> Employee Name:</label>
+                            <input type="text" id="emp" class="form-control">
+                        </div>
+                        <div class="col">
+                            <label for="month"> Month</label>
+                            <input type="text" id="month" class="form-control">
+                        </div>
+                        <div class="col">
+                            <label for="dperiod"> Date Period:</label>
+                            <input type="text" id="dperiod" class="form-control">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col">
+                            <label for="pdate"> Pay Date:</label>
+                            <input type="text" id="pdate" class="form-control">
+                        </div>
+                        <div class="col">
+                            <label for="drate"> Daily Rate</label>
+                            <input type="text" id="drate" class="form-control">
+                        </div>
+                    </div>
+                </div>
+                <table class="table table-bordered" style="border: 1px solid;">
+                    <thead >
+                    <tr class="table-info text-center" style="border: 1px solid;">
+                        <th scope="col" >Earnings</th>
+                        <th scope="col">Amount</th>
+                        <th scope="col">Deduction</th>
+                        <th scope="col">Amount</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <th scope="row">Basic Salary:</th>
+                        <td> </td>
+                        <th scope="row">Taxation:</th>
+                        <td>  </td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Total Hours:</th>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <th scope="row">Total Deductions:</th>
+                        <td></td>
+                    </tr>
+                    <tr class="table-info" style="border: 1px solid;">
+                        <th scope="row"> Gross Pay: </th>
+                        <td></td>
+                        <th scope="row"> Net Pay:</th>
+                        <td></td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="container">
+    <input type="button"  style="float:right;" onclick="printDiv('printableArea')" value="Print" />
+</div>
+
+<script src="{% static 'js/print.js' %}"></script>
+
+
+
+{% endblock content %}

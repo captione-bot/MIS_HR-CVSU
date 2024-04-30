@@ -1,9 +1,16 @@
 {% extends 'index.html' %}
 {% block content %}
 {% load static %}
+
+<style>
+    body {
+    background-color: #006400;
+    }
+
+</style>
 <form method="post">
     {% csrf_token %}
-    <section class="h-100" style="background-color: #006400;">
+    <section class="h-100">
         <div class="container py-5 h-100">
             <div class="row d-flex justify-content-center align-items-center h-100">
                 <div class="col-xl-10">

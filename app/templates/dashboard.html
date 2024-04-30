@@ -1,0 +1,45 @@
+{% extends 'index.html' %}
+{% block content %}
+{% load static %}
+
+<h1 class="text-center"> Dashboard </h1>
+<div class="container" style="padding: 50px">
+    <div class="row">
+        <div class="col-md-4">
+            <div class="card text-center" style="border: 5px solid green; ">
+                <a href="/attendance">
+                <div class="card-header text-center" style="height: 70px">
+                  <img alt="logo" width="60" height="50"   src="{% static '/images/timelogo.png' %}" > </img>
+                </div>
+                    </a>
+                <div class="card-body" style="height: 320px;">
+                    <h3> Attendance</h3>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card text-center" style="border: 5px solid green;">
+                <a href="#">
+                <div class="card-header text-center" style="height: 70px" >
+                  <img alt="logo" width="60" height="50"   src="{% static '/images/req.png' %}" > </img>
+                </div>
+                    </a>
+                <div class="card-body" style="height: 320px;">
+                    <h3> Requirements</h3>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card text-center" style="border: 5px solid green;">
+                <div class="card-header text-center"  style="height: 70px">
+                  <img alt="logo" width="60" height="50"   src="{% static '/images/payslip.png' %}" > </img>
+                </div>
+                <div class="card-body" style="height: 320px;">
+                    <h3> Payslip</h3>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock content %}
